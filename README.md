@@ -60,3 +60,101 @@ extensibility to either side of class hierarchies.
 In the example; Translator is injected into Expert class. Both Translator and Expert could be extended while the
 client takes care of proper implementation of Translator to be injected.
 
+#### Composite
+
+When hierarchy of classes composed in a class, LSP (Liskov substitution principle) maybe violated. Composite design
+pattern alleviates the violation of LSP by generalizing the class hierarchy. Super class in the hierarchy
+implements some of the methods such as add, remove, count, operation() to provide the generality.
+
+On the flipside, violations of LSP may be pushed to the specific sub-classes.
+
+#### Decorator
+
+When nesting of object behavior is required, Decorator pattern comes handly. Leaf level component in the decorator
+pattern does not invoked nested component, others invoked nested component before self' behavior is executed.
+
+In the example: EvaluationDecorator handles the nested part and ResidentialEvaluator handles the leaf part.
+
+#### Facade
+
+Facade patterns provides an easy way to interact with complex set of sub-systems when the client is not interested
+to inteface with all the details of sub-systems. Having said that client can have visibility to the sub-systems
+if needed. 
+
+Facade is loosely coupled with sub-systems, sub-systems have no knowledge of the facade.
+
+#### Flyweight
+
+Flyweight pattern minimizes the number of objects by sharing similar objects instead of creating new ones.
+Immutable state that holds intrinsic state can be shared during computation & mutable state can change during
+computation.
+
+For example is: java.util.regex.Pattern holds intrinsic state of regEx expression that is compiled and shared among
+the extrinsic string data stored by Matcher classes.
+
+In the example, Color state can be shared while varying the location and size data.
+
+#### Proxy
+
+Proxy pattern is implemented in different flavors in different contexts
+Remote proxy pattern - provides an indirection between local or remote implementations
+Virtual proxy pattern - provides lazy instantiation to defer the object creation during first method call
+Protected proxy pattern - controls the access to the object by hiding some details
+Proxies in Mock Test Frameworks - Mock test frameworks use proxy object using CGLib or similar dynamic libraries
+
+### Behavioral
+
+#### Chain of responsibility
+
+Seems similar to Decorator pattern but differs in the intent of the pattern. When an event needs to be handled
+by one or few of the event handlers, the chaining of the objects by passing along the chain until an object
+handles it.
+
+#### Command
+
+Command pattern uses callback functions to separate concerns of the details in the receiving object vs the
+callback processing
+ 
+#### Interpreter
+ 
+Interpreter pattern is used in evaluation of expressions/natural language using terminal and non-terminal
+symbols created from the parsing of the text.
+
+#### Iterator
+
+Iterator pattern provides consistent way of traversing elements across different type of collections
+
+#### Mediator
+
+Mediator pattern decouples the related components from interactions by delegating the responsibility 
+to the mediator. Mediator holds references of all the components and manages the constraints.
+ 
+#### Memento
+ 
+Without violating the object encapsulation, save the internal state of an object to be restored to a
+previous copy at a later time
+
+#### Observer
+
+Decoupling of the objects by registering for the notification of events. java.util has Observer and Observable
+classes to go with the pattern. Lambda expressions further simplifies the implementation of the pattern.
+
+#### State
+
+Pattern implements the state machine on the internal details of an object by making classes derive from a
+state pattern interface or abstract class
+
+#### Strategy
+
+Within a family of algorithms, strategy pattern allows interchanging of algorithms at the runtime.
+
+#### Template Method
+
+Template method standardizes skeleton of an algorithm and defer details/steps of the algorithm to the subclasses
+
+#### Visitor
+
+One or more algorithms can be applied on an of object structure without polluting the object structure with details
+of the algorithm. Object structure is decoupled from the algorithms.
+
+[Reference: Agile Learner by Venkat Subramaniam](https://www.agilelearner.com/)
